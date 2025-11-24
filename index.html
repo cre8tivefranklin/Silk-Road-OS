@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SILK_ROAD_V1</title>
+    <title>SILK_ROAD_OS // 1000-1020 CE</title>
+    <meta name="description" content="A brutalist-style interactive map visualizing Silk Road trade routes (1000-1020 CE) with AI-generated logistics and disease demography." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -36,20 +37,27 @@
         background: #ccc; 
       }
     </style>
-  <script type="importmap">
+    <!-- Process Shim for Browser Compatibility on GitHub Pages -->
+    <script>
+      window.process = window.process || { env: { API_KEY: '' } };
+    </script>
+    <script type="importmap">
 {
   "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-leaflet": "https://aistudiocdn.com/react-leaflet@^5.0.0",
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-leaflet": "https://esm.sh/react-leaflet@4.2.1?deps=react@18.2.0,react-dom@18.2.0,leaflet@1.9.4",
+    "leaflet": "https://esm.sh/leaflet@1.9.4",
+    "@google/genai": "https://esm.sh/@google/genai@0.1.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "leaflet": "https://aistudiocdn.com/leaflet@^1.9.4"
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
